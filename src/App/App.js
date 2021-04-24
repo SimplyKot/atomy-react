@@ -1,7 +1,7 @@
 import "./App.css";
 
 function App() {
-  return <div> sdfsdf </div>;
+  return <div>ывавыа</div>;
 }
 
 export default App;

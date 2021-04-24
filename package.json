@@ -22,8 +22,7 @@
     },
     "eslintConfig": {
         "plugins": [
-            "prettier",
-            "css-modules"
+            "prettier"
         ],
         "extends": [
             "react-app",
