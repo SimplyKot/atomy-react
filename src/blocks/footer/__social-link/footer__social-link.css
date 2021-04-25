@@ -1,0 +1,16 @@
+.footer__social-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.footer__social-link:last-child {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  justify-content: center;
+}

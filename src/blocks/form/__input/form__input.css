@@ -1,0 +1,27 @@
+.form__input {
+  padding: 0 0 9px;
+  width: 100%;
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: inherit;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  margin: 25px 0 25px;
+  text-align: center;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.form__input::placeholder {
+  font-size: 14px;
+  line-height: 17px;
+  color: #979797;
+}
+
+.form__input:focus::placeholder {
+  visibility: hidden;
+}

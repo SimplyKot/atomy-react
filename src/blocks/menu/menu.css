@@ -1,0 +1,15 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 60px;
+  box-sizing: border-box;
+  height: 60px;
+  background-color: /*rgb(217, 232, 252)*/LightCyan;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .4);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+}

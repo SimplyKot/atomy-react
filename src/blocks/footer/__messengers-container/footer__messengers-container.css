@@ -1,0 +1,6 @@
+.footer__messengers-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  gap: 0 30px;
+}

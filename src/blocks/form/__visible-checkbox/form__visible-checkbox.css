@@ -1,0 +1,11 @@
+.form__visible-checkbox {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 22px;
+  height: 22px;
+  background-image: url(../../../images/check-passive.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

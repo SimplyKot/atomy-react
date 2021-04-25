@@ -1,0 +1,24 @@
+.form__submit {
+  padding: 0;
+  width: 50%;
+  height: 50px;
+  margin: 0;
+  background-color: rgb(42, 107, 226);
+  border-radius: 2px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form__submit:focus {
+  outline: none;
+}
+
+.form__submit:hover {
+  opacity: .8;
+  transition: opacity .3s linear;
+}

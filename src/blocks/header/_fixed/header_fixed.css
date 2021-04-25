@@ -1,0 +1,9 @@
+.header_fixed {
+  position: fixed;
+  top: 0;
+  /*border-bottom: 1px solid #cdd2dd;*/
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+  height: 60px;
+  transition: box-shadow .7s linear,
+  height .3s linear;
+}

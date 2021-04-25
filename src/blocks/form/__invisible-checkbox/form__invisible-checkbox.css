@@ -1,0 +1,19 @@
+.form__invisible-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.form__invisible-checkbox:hover + .form__visible-checkbox {
+  background-image: url(../../../images/check-passive-hover.svg);
+}
+
+.form__invisible-checkbox:checked + .form__visible-checkbox {
+  background-image: url(../../../images/check-active.svg);
+}
+
+.form__invisible-checkbox:checked:hover + .form__visible-checkbox {
+  background-image: url(../../../images/check-active-hover.svg);
+}

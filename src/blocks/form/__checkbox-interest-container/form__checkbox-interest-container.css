@@ -1,0 +1,10 @@
+.form__checkbox-interest-container {
+  width: 55%;
+  height: 55px;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 15px 0 35px;
+}
