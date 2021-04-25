@@ -1,11 +1,14 @@
-import App from "./App";
-
 function Application() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("Submit");
+  }
+
   return (
     <section className="application" id="application">
-      <form className="form" novalidate>
+      <form className="form" noValidate onSubmit={handleSubmit}>
         <h2 className="form__title">ФОРМА ОБРАТНОЙ СВЯЗИ</h2>
-        <label for="fio" className="form__input-title">
+        <label htmlFor="fio" className="form__input-title">
           Введите ФИО полностью:
         </label>
         <input
@@ -16,7 +19,7 @@ function Application() {
           className="form__input"
         />
         <span className="form__error" id="fio-input-error"></span>
-        <label for="tel" className="form__input-title">
+        <label htmlFor="tel" className="form__input-title">
           Сотовый телефон:
         </label>
         <input
@@ -27,7 +30,7 @@ function Application() {
           className="form__input"
         />
         <span className="form__error" id="tel-input-error"></span>
-        <label for="email" className="form__input-title">
+        <label htmlFor="email" className="form__input-title">
           Электронная почта:
         </label>
         <input
@@ -40,7 +43,7 @@ function Application() {
         <span className="form__error" id="email-input-error"></span>
         <p className="form__input-title">Укажите что вас заинтересовало?</p>
         <div className="form__checkbox-interest-container">
-          <label for="products">
+          <label htmlFor="products">
             <input
               id="products"
               type="checkbox"
@@ -51,7 +54,7 @@ function Application() {
             <span className="form__visible-checkbox"></span>
             <span className="form__checkbox-text">Интересует Продукция</span>
           </label>
-          <label for="business">
+          <label htmlFor="business">
             <input
               id="business"
               type="checkbox"
@@ -63,7 +66,7 @@ function Application() {
             <span className="form__checkbox-text">Интересует Бизнес</span>
           </label>
         </div>
-        <label for="approval" className="form__checkbox-container">
+        <label htmlFor="approval" className="form__checkbox-container">
           <input
             id="approval"
             type="checkbox"
@@ -77,7 +80,7 @@ function Application() {
             компанию, соглашаюсь с условиями Политики Конфиденциальности.
           </span>
         </label>
-        <label for="confirmation" className="form__checkbox-container">
+        <label htmlFor="confirmation" className="form__checkbox-container">
           <input
             id="confirmation"
             type="checkbox"
