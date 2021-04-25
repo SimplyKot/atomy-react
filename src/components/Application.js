@@ -1,8 +1,33 @@
+import { useEffect, useState } from "react";
+import useFormValidation from "../hooks/UseForm";
 function Application() {
+  const [inputDisabled, setInputDisabled] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+
+  const {
+    values,
+    errors,
+    isValid,
+    handleChange,
+    resetForm,
+  } = useFormValidation();
+
+  function handleCheckbox(e) {
+    console.log(e);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Submit");
+    console.log("Submit", values, isValid, errors);
   }
+
+  useEffect(() => {
+    resetForm();
+  }, []);
+
+  useEffect(() => {
+    console.log(values);
+  }, [values]);
 
   return (
     <section className="application" id="application">
@@ -17,8 +42,14 @@ function Application() {
           placeholder="Фамилия Имя Отчество"
           type="text"
           className="form__input"
+          value={values.fio || ""}
+          onChange={handleChange}
+          required
+          minLength="2"
         />
-        <span className="form__error" id="fio-input-error"></span>
+        <span className="form__error" id="fio-input-error">
+          {errors.fio}
+        </span>
         <label htmlFor="tel" className="form__input-title">
           Сотовый телефон:
         </label>
@@ -28,8 +59,14 @@ function Application() {
           placeholder="Введите номер телефона"
           type="tel"
           className="form__input"
+          value={values.tel || ""}
+          onChange={handleChange}
+          required
+          pattern="(\+7[-_()\s]+|\+7\s?[(]{0,1}[0-9]{3}[)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2})"
         />
-        <span className="form__error" id="tel-input-error"></span>
+        <span className="form__error" id="tel-input-error">
+          {errors.tel}
+        </span>
         <label htmlFor="email" className="form__input-title">
           Электронная почта:
         </label>
@@ -39,17 +76,23 @@ function Application() {
           placeholder="Введите адрес электронной почты"
           type="email"
           className="form__input"
+          value={values.email || ""}
+          onChange={handleChange}
+          required
         />
-        <span className="form__error" id="email-input-error"></span>
+        <span className="form__error" id="email-input-error">
+          {errors.email}
+        </span>
         <p className="form__input-title">Укажите что вас заинтересовало?</p>
         <div className="form__checkbox-interest-container">
           <label htmlFor="products">
             <input
               id="products"
               type="checkbox"
-              name="interest"
-              value="products"
+              name="products"
               className="form__invisible-checkbox"
+              value={values.products || ""}
+              onChange={handleChange}
             />
             <span className="form__visible-checkbox"></span>
             <span className="form__checkbox-text">Интересует Продукция</span>
@@ -58,9 +101,10 @@ function Application() {
             <input
               id="business"
               type="checkbox"
-              name="interest"
-              value="business"
+              name="business"
               className="form__invisible-checkbox"
+              value={values.business || ""}
+              onChange={handleChange}
             />
             <span className="form__visible-checkbox"></span>
             <span className="form__checkbox-text">Интересует Бизнес</span>
@@ -71,8 +115,9 @@ function Application() {
             id="approval"
             type="checkbox"
             name="approval"
-            value="yes"
             className="form__invisible-checkbox"
+            value={values.approval || ""}
+            onChange={handleChange}
           />
           <span className="form__visible-checkbox"></span>
           <span className="form__checkbox-text">
@@ -85,8 +130,8 @@ function Application() {
             id="confirmation"
             type="checkbox"
             name="confirmation"
-            value="yes"
             className="form__invisible-checkbox"
+            onChange={handleCheckbox}
           />
           <span className="form__visible-checkbox"></span>
           <span className="form__checkbox-text">
@@ -94,7 +139,11 @@ function Application() {
             хотел(а) бы зарегистрироваться
           </span>
         </label>
-        <button className="form__submit" type="submit">
+        <button
+          className="form__submit"
+          type="submit"
+          disabled={buttonDisabled}
+        >
           Отправить
         </button>
       </form>

@@ -10,6 +10,7 @@ function Header() {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
+    // Устанваливаем таймер
     const interval = setInterval(() => {
       setSeconds((seconds) => seconds + 1);
     }, 1000);
@@ -17,8 +18,8 @@ function Header() {
   }, []);
 
   useEffect(() => {
+    // Каждые 5 секунд меняем фон и обнуляем таймер
     if (seconds >= 5) {
-      console.log(seconds);
       setShowBackground(!showBackground);
       setSeconds(0);
     }
