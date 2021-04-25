@@ -1,5 +1,4 @@
 .products__list-image {
-  object-fit: cover;
-  width: ;
-  height: ;
+    object-fit: cover;
+    width: 100%;
 }

@@ -7,13 +7,13 @@
 }
 
 .form__invisible-checkbox:hover + .form__visible-checkbox {
-  background-image: url(../../../images/check-passive-hover.svg);
+  background-image: url(../../../image/check-passive-hover.svg);
 }
 
 .form__invisible-checkbox:checked + .form__visible-checkbox {
-  background-image: url(../../../images/check-active.svg);
+  background-image: url(../../../image/check-active.svg);
 }
 
 .form__invisible-checkbox:checked:hover + .form__visible-checkbox {
-  background-image: url(../../../images/check-active-hover.svg);
+  background-image: url(../../../image/check-active-hover.svg);
 }

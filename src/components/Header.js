@@ -1,8 +1,51 @@
-import logo from "../images/atomy.logo.l.png";
-import pic1 from "../images/products_img01.jpg";
-import pic2 from "../images/products_img02.jpg";
+import logo from "../image/atomy.logo.l.png";
+// import pic1 from "../image/products_img01.jpg";
+// import pic2 from "../image/products_img02.jpg";
+
+import { useEffect, useState } from "react";
 
 function Header() {
+  const [showBackground, setShowBackground] = useState(true);
+
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds((seconds) => seconds + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (seconds >= 5) {
+      console.log(seconds);
+      setShowBackground(!showBackground);
+      setSeconds(0);
+    }
+  }, [seconds]);
+
+  /*console.log('s');
+  function makeFixed() {
+    const scrollHeight = window.pageYOffset;
+    if (scrollHeight > 2) {
+      header.classNameList.add('header_fixed');
+      if (scrollHeight < 40) {
+        document.querySelector('.header_fixed').style.height = `${100 - scrollHeight}px`;
+      } else {
+        document.querySelector('.header_fixed').style.height = `60px`;
+      }
+    } else {
+      header.classNameList.remove('header_fixed');
+    }
+  };
+  window.addEventListener('scroll', makeFixed);*/
+
+  // useEffect(() => {
+  //   if (!tik) {
+  //     setTik(true);
+  //   }
+  // }, [tik]);
+
   return (
     <header className="header" id="header">
       <nav className="menu">
@@ -45,20 +88,14 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <div className="header__background header__background_image-one header__background_main">
-        <img
-          src={pic1}
-          alt="Сменяющаяся картинка - косметика Атоми."
-          className="header__background-image"
-        />
-      </div>
-      <div className="header__background header__background_image-two">
-        <img
-          src={pic2}
-          alt="Сменяющаяся картинка - косметика Атоми."
-          className="header__background-image"
-        />
-      </div>
+      <div
+        className={`header__background header__background_image-one
+        ${showBackground ? " header__background_main" : ""}`}
+      ></div>
+      <div
+        className={`header__background header__background_image-two
+      ${!showBackground ? " header__background_main" : ""}`}
+      ></div>
       <div className="header__overlay"></div>
     </header>
   );
