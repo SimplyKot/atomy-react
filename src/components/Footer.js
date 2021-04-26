@@ -70,7 +70,7 @@ function Foooter() {
           />
           <h3 className="footer__title">Напишите нам</h3>
           <a href="#" className="footer__mail-link">
-            terta1@mail.ru
+            info@atomyclub.pro
           </a>
           <p className="footer__annotation">
             Задавайте интересующие Вас вопросы по электронной почте.
