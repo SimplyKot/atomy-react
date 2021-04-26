@@ -3,6 +3,7 @@ import telegram from "../image/Telegram.svg";
 import vk from "../image/VKontakte.svg";
 import email from "../image/postman.png";
 import ornament from "../image/2730324.svg";
+import networks from "../image/networks.png";
 
 function Foooter() {
   return (
@@ -10,7 +11,7 @@ function Foooter() {
       <div className="footer__social-container">
         <div className="footer__social-networks-container">
           <img
-            src="<%=require('./image/networks.png')%>"
+            src={networks}
             alt="Картинка, обозначающая социальные сети"
             className="footer__image-networks"
           />
