@@ -24,7 +24,12 @@ function Application() {
 
   useEffect(() => {
     console.log(values);
-    if (values.approval && values.confirmation && isValid) {
+    if (
+      values.approval &&
+      values.confirmation &&
+      isValid &&
+      (values.products || values.business)
+    ) {
       setButtonDisabled(false);
     } else {
       setButtonDisabled(true);
