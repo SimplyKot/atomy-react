@@ -9,7 +9,11 @@ const useFormWithValidation = () => {
     const { target } = event;
     const { name } = target;
     const { value } = target;
-    setValues({ ...values, [name]: value });
+    console.log(target.checked);
+    setValues({
+      ...values,
+      [name]: target.type === "checkbox" ? target.checked : value,
+    });
     setErrors({ ...errors, [name]: target.validationMessage });
     setIsValid(target.closest("form").checkValidity());
   };

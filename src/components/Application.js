@@ -12,21 +12,24 @@ function Application() {
     resetForm,
   } = useFormValidation();
 
-  function handleCheckbox(e) {
-    console.log(e);
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
     console.log("Submit", values, isValid, errors);
+    //Тут буде обращение к  API для отпавки письма
   }
 
   useEffect(() => {
     resetForm();
+    setButtonDisabled(true);
   }, []);
 
   useEffect(() => {
     console.log(values);
+    if (values.approval && values.approval && isValid) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
   }, [values]);
 
   return (
@@ -46,6 +49,7 @@ function Application() {
           onChange={handleChange}
           required
           minLength="2"
+          disabled={inputDisabled}
         />
         <span className="form__error" id="fio-input-error">
           {errors.fio}
@@ -63,6 +67,7 @@ function Application() {
           onChange={handleChange}
           required
           pattern="(\+7[-_()\s]+|\+7\s?[(]{0,1}[0-9]{3}[)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2})"
+          disabled={inputDisabled}
         />
         <span className="form__error" id="tel-input-error">
           {errors.tel}
@@ -79,6 +84,7 @@ function Application() {
           value={values.email || ""}
           onChange={handleChange}
           required
+          disabled={inputDisabled}
         />
         <span className="form__error" id="email-input-error">
           {errors.email}
@@ -93,6 +99,7 @@ function Application() {
               className="form__invisible-checkbox"
               value={values.products || ""}
               onChange={handleChange}
+              disabled={inputDisabled}
             />
             <span className="form__visible-checkbox"></span>
             <span className="form__checkbox-text">Интересует Продукция</span>
@@ -105,6 +112,7 @@ function Application() {
               className="form__invisible-checkbox"
               value={values.business || ""}
               onChange={handleChange}
+              disabled={inputDisabled}
             />
             <span className="form__visible-checkbox"></span>
             <span className="form__checkbox-text">Интересует Бизнес</span>
@@ -118,6 +126,7 @@ function Application() {
             className="form__invisible-checkbox"
             value={values.approval || ""}
             onChange={handleChange}
+            disabled={inputDisabled}
           />
           <span className="form__visible-checkbox"></span>
           <span className="form__checkbox-text">
@@ -131,7 +140,8 @@ function Application() {
             type="checkbox"
             name="confirmation"
             className="form__invisible-checkbox"
-            onChange={handleCheckbox}
+            onChange={handleChange}
+            disabled={inputDisabled}
           />
           <span className="form__visible-checkbox"></span>
           <span className="form__checkbox-text">
@@ -140,7 +150,8 @@ function Application() {
           </span>
         </label>
         <button
-          className="form__submit"
+          className={`form__submit
+          ${inputDisabled || buttonDisabled ? " form__submit_disabled" : ""}`}
           type="submit"
           disabled={buttonDisabled}
         >
