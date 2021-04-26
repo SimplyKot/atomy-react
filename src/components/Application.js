@@ -20,7 +20,6 @@ function Application() {
 
   useEffect(() => {
     resetForm();
-    setButtonDisabled(true);
   }, []);
 
   useEffect(() => {

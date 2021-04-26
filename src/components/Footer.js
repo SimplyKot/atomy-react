@@ -1,3 +1,9 @@
+import whatsapp from "../image/WhatsApp.svg";
+import telegram from "../image/Telegram.svg";
+import vk from "../image/VKontakte.svg";
+import email from "../image/postman.png";
+import ornament from "../image/2730324.svg";
+
 function Foooter() {
   return (
     <footer className="footer" id="footer">
@@ -17,7 +23,7 @@ function Foooter() {
               rel="noreferrer"
             >
               <img
-                src="<%=require('./image/WhatsApp.svg')%>"
+                src={whatsapp}
                 alt="Иконка вотсаппа"
                 className="footer__social-icon"
               />
@@ -30,7 +36,7 @@ function Foooter() {
               rel="noreferrer"
             >
               <img
-                src="<%=require('./image/Telegram.svg')%>"
+                src={telegram}
                 alt="Иконка телеграмма"
                 className="footer__social-icon"
               />
@@ -43,7 +49,7 @@ function Foooter() {
               rel="noreferrer"
             >
               <img
-                src="<%=require('./image/VKontakte.svg')%>"
+                src={vk}
                 alt="Иконка ВКонтакте"
                 className="footer__social-icon"
               />
@@ -57,7 +63,7 @@ function Foooter() {
         </div>
         <div className="footer__mail-container">
           <img
-            src="<%=require('./image/postman.png')%>"
+            src={email}
             alt="Картинка - бегущий почтальон"
             className="footer__image-mail"
           />
@@ -70,11 +76,7 @@ function Foooter() {
           </p>
         </div>
       </div>
-      <img
-        src="<%=require('./image/2730324.svg')%>"
-        alt="Орнамент"
-        className="footer__ornament"
-      />
+      <img src={ornament} alt="Орнамент" className="footer__ornament" />
       <p className="footer__attention">
         Сайт носит информационно-справочный характер и ни при каких условиях не
         является публичной офертой. Полное или частичное копирование материалов
@@ -84,3 +86,5 @@ function Foooter() {
     </footer>
   );
 }
+
+export default Foooter;
