@@ -1,0 +1,5 @@
+.business__article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

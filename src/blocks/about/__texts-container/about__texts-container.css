@@ -1,0 +1,13 @@
+.about__texts-container {
+  width: 100%;
+  max-width: 1350px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 70px;
+}
+
+@media screen and (max-width: 1800px) {
+  .about__texts-container {
+    max-width: 75%;
+  }
+}

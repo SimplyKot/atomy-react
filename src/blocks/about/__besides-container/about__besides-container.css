@@ -1,0 +1,6 @@
+.about__besides-container {
+  width: 100%;
+  max-width: 80%;
+  display: flex;
+  justify-content: space-between;
+}

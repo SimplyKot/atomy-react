@@ -1,0 +1,12 @@
+.business {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: calc(100vw/2);
+  background-position: center;
+  background-size: 100% calc(100vw/1.459);
+  background-repeat: no-repeat;
+  background-image: url(../../image/03.jpg);
+}

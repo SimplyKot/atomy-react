@@ -1,0 +1,24 @@
+.catalog__button {
+  padding: 0;
+  width: 270px;
+  height: 70px;
+  margin: 0;
+  background-color: rgb(42, 107, 226);
+  border-radius: 2px;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 1.15;
+  text-align: center;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.catalog__button:focus {
+  outline: none;
+}
+
+.catalog__button:hover {
+  opacity: .8;
+  transition: opacity .3s linear;
+}

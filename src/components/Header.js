@@ -25,56 +25,34 @@ function Header() {
     }
   }, [seconds]);
 
-  /*console.log('s');
-  function makeFixed() {
-    const scrollHeight = window.pageYOffset;
-    if (scrollHeight > 2) {
-      header.classNameList.add('header_fixed');
-      if (scrollHeight < 40) {
-        document.querySelector('.header_fixed').style.height = `${100 - scrollHeight}px`;
-      } else {
-        document.querySelector('.header_fixed').style.height = `60px`;
-      }
-    } else {
-      header.classNameList.remove('header_fixed');
-    }
-  };
-  window.addEventListener('scroll', makeFixed);*/
-
-  // useEffect(() => {
-  //   if (!tik) {
-  //     setTik(true);
-  //   }
-  // }, [tik]);
-
   return (
     <header className="header" id="header">
       <nav className="menu">
-        <h1 className="header__title">
-          <a href="#header" target="_top" className="header__logo-container">
-            <img className="header__logo" alt="Логотип" src={logo} />
-            Дистрибьютoр ATOMY
-          </a>
-        </h1>
+        {/* <h1 className="header__title"> */}
+        <a href="#header" target="_top" className="header__logo-container">
+          <img className="header__logo" alt="Логотип" src={logo} />
+          Дистрибьютoр ATOMY
+        </a>
+        {/* </h1> */}
         <ul className="menu__links">
           <li>
-            <a href="#" target="_self" className="menu__link">
+            <a href="#about" target="_self" className="menu__link">
               Об Атоми
             </a>
           </li>
           <li>
-            <a href="#" target="_self" className="menu__link">
+            <a href="#products" target="_self" className="menu__link">
               Продукты
             </a>
           </li>
           <li>
-            <a href="#" target="_self" className="menu__link">
+            <a href="#catalog" target="_self" className="menu__link">
               Каталог
             </a>
           </li>
           <li>
-            <a href="#" target="_self" className="menu__link">
-              Бизнес с Атоми
+            <a href="#business" target="_self" className="menu__link">
+              Бизнес
             </a>
           </li>
           <li>
@@ -97,7 +75,10 @@ function Header() {
         className={`header__background header__background_image-two
       ${!showBackground ? " header__background_main" : ""}`}
       ></div>
-      <div className="header__overlay"></div>
+      <div class="header__overlay">
+        <h1 class="header__title">Атоми</h1>
+        <p class="header__subtitle">Корейская косметическая компания</p>
+      </div>
     </header>
   );
 }

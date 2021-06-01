@@ -1,3 +1,7 @@
 .products__list-title {
   text-align: center;
+  margin: 17px 0 13px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.15;
 }

@@ -1,0 +1,7 @@
+.popup__checkbox-container {
+  width: 78%;
+  margin: 0 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

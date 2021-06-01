@@ -1,8 +1,12 @@
 .header__title {
+  color: rgb(29, 120, 223);
+  position: absolute;
+  top: 140px;
+  left: 160px;
   padding: 0;
   margin: 0;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 140px;
   line-height: 1.15;
   max-width: 120px;
 }

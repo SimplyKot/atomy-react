@@ -1,0 +1,8 @@
+.form__input-required-text {
+  margin: 0 0 20px;
+  max-width: 400px;
+  font-size: 16px;
+  line-height: 1.15;
+  font-weight: 400;
+  display: flex;
+}

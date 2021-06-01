@@ -1,6 +1,6 @@
 .header__background {
     width: 100%;
-    height: calc(100vh/2.13);
+    height: calc(100vw/2.8);
     background-attachment: fixed;
     background-position: left 0 top 60px;
     background-size: 100% calc(100vw/2.13);

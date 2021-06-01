@@ -1,0 +1,6 @@
+.catalog__list-element {
+  margin: 0 0 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
