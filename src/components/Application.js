@@ -58,6 +58,21 @@ function Application() {
         <span className="form__error" id="fio-input-error">
           {errors.fio}
         </span>
+        <label for="date" className="form__input-title">
+          Дата рождения:
+        </label>
+        <input
+          id="date"
+          name="date"
+          placeholder="Дата рождения"
+          type="date"
+          className="form__input"
+          onChange={handleChange}
+          disabled={inputDisabled}
+        />
+        <span className="form__error" id="date-input-error">
+          {errors.date}
+        </span>
         <label htmlFor="tel" className="form__input-title">
           Сотовый телефон:
         </label>
@@ -93,28 +108,45 @@ function Application() {
         <span className="form__error" id="email-input-error">
           {errors.email}
         </span>
+
+        <label for="address" className="form__input-title">
+          Ваш город:
+        </label>
+        <input
+          id="address"
+          name="address"
+          placeholder="Введите ваш город"
+          type="text"
+          className="form__input"
+          onChange={handleChange}
+          disabled={inputDisabled}
+        />
+        <span className="form__error" id="address-input-error">
+          {errors.address}
+        </span>
+
         <p className="form__input-title">Укажите что вас заинтересовало?</p>
         <div className="form__checkbox-interest-container">
-          <label htmlFor="products">
+          <label htmlFor="products_interest">
             <input
-              id="products"
+              id="products_interest"
               type="checkbox"
               name="products"
               className="form__invisible-checkbox"
-              value={values.products || ""}
+              value={values.products_interest || ""}
               onChange={handleChange}
               disabled={inputDisabled}
             />
             <span className="form__visible-checkbox"></span>
             <span className="form__checkbox-text">Интересует Продукция</span>
           </label>
-          <label htmlFor="business">
+          <label htmlFor="business_interest">
             <input
-              id="business"
+              id="business_interest"
               type="checkbox"
-              name="business"
+              name="business_interest"
               className="form__invisible-checkbox"
-              value={values.business || ""}
+              value={values.business_interest || ""}
               onChange={handleChange}
               disabled={inputDisabled}
             />
