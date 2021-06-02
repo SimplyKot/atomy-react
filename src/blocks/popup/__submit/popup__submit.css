@@ -22,3 +22,11 @@
   opacity: .8;
   transition: opacity .3s linear;
 }
+
+.popup__submit_disabled {
+  opacity: .8;
+}
+
+.popup__submit_disabled:hover {
+  cursor: default
+}

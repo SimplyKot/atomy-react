@@ -4,19 +4,23 @@ import Main from "./Main";
 import Footer from "./Footer";
 import Popup from "./Popup";
 import api from "../utils/Api";
+import Confirmation from "./Confirmation";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isConfirmPopupOpen, setIsConfirmPopupOpen] = useState(false);
 
   function togglePopup() {
     setIsPopupOpen(!isPopupOpen);
-    console.log("toggelPopup in App =>0, isPopupOpen");
+  }
+
+  function toggleConfirmPopup() {
+    setIsConfirmPopupOpen(!isConfirmPopupOpen);
   }
 
   function sendData(data) {
-    console.log("Данные для отправки:", data);
-    api.sendData(data).then((res) => {
-      console.log(res);
+    return api.sendData(data).finally(() => {
+      setIsConfirmPopupOpen(true);
     });
   }
 
@@ -29,6 +33,10 @@ function App() {
         isOpen={isPopupOpen}
         togglePopup={togglePopup}
         popupSubmit={sendData}
+      />
+      <Confirmation
+        isOpen={isConfirmPopupOpen}
+        togglePopup={toggleConfirmPopup}
       />
     </div>
   );

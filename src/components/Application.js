@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useFormValidation from "../hooks/UseForm";
 function Application(props) {
+  const { applicationSubmit } = props;
   const [inputDisabled, setInputDisabled] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
@@ -16,17 +17,24 @@ function Application(props) {
     e.preventDefault();
     console.log("Submit", values, isValid, errors);
     //Тут буде обращение к  API для отпавки письма
-    props.applicationSubmit(values);
-
+    applicationSubmit(values)
+      .then((res) => {
+        //Тут хорошо бы добавить попап о резульате
+        console.log(res);
+      })
+      .finally(() => {
+        setInputDisabled(false);
+      });
     resetForm();
   }
 
   useEffect(() => {
     resetForm();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    console.log(values);
+    // console.log(values);
     if (
       values.approval &&
       values.confirmation &&
