@@ -25,19 +25,20 @@ function Popup(props) {
     setInputDisabled(true);
     //TODO: По хорошему надо переделать на темплейт
     var msg = "<h3>Сообщение пришло с формы (Хочу каталог)</h3><ul>";
-    msg += `<li>Пользователь:${values.popup_fio}</li>`;
-    msg += `<li>Телефон:${values.popup_tel}</li>`;
-    msg += `<li>Почта:${values.popup_email}</li>`;
+    msg += `<li>Пользователь: ${values.popup_fio || "не указан"}</li>`;
+    msg += `<li>Телефон: ${values.popup_tel || "не указан"}</li>`;
+    msg += `<li>Почта: ${values.popup_email || "не указан"}</li>`;
     msg += `${values.popup_products_interest ? "<li>Подукты</li>" : ""}`;
     msg += ` ${values.popup_business_interest ? "<li>Бизнес</li>" : ""}`;
     msg += "</ul>";
     popupSubmit({ data: msg })
       .then((res) => {
         //Тут хорошо бы добавить попап о резульате
-        console.log(res);
+        // console.log(res);
       })
       .finally(() => {
         setInputDisabled(false);
+        resetForm();
       });
     props.togglePopup();
   }
@@ -48,12 +49,6 @@ function Popup(props) {
   }, []);
 
   useEffect(() => {
-    console.log(isValid);
-    console.log(values.popup_approval);
-    console.log(values.popup_confirmation);
-    console.log(values.popup_business_interest);
-    console.log(values.popup_products_interest);
-
     if (
       values.popup_approval &&
       values.popup_confirmation &&

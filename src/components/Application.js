@@ -15,17 +15,32 @@ function Application(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Submit", values, isValid, errors);
+    // console.log("Submit", values, isValid, errors);
     //Тут буде обращение к  API для отпавки письма
-    applicationSubmit(values)
+    setInputDisabled(true);
+    //TODO: По хорошему надо переделать на темплейт
+    var msg = "<h3>Сообщение пришло с формы обратной связи</h3><ul>";
+    msg += `<li>Пользователь: ${values.fio || "не указан"}</li>`;
+    msg += `<li>Телефон: ${values.tel || "не указан"}</li>`;
+    msg += `<li>Дата рожения: ${values.data || "не указан"}</li>`;
+    msg += `<li>Почта: ${values.email || "не указан"}</li>`;
+    msg += `<li>Страна: ${values.country || "не указан"}</li>`;
+    msg += `<li>Индекс: ${values.index || "не указан"}</li>`;
+    msg += `<li>Почтовый адрес: ${values.address || "не указан"}</li>`;
+    msg += `${values.products ? "<li>Подукты</li>" : ""}`;
+    msg += ` ${values.business_interest ? "<li>Бизнес</li>" : ""}`;
+    msg += "</ul>";
+    // popupSubmit({ data: msg })
+
+    applicationSubmit({ data: msg })
       .then((res) => {
         //Тут хорошо бы добавить попап о резульате
-        console.log(res);
+        // console.log(res);
       })
       .finally(() => {
         setInputDisabled(false);
+        resetForm();
       });
-    resetForm();
   }
 
   useEffect(() => {

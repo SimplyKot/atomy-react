@@ -9,7 +9,7 @@ class Api {
 
   // Функция связи с сервером
   _transmit(url, method, body = "") {
-    console.log(body);
+    //console.log(body);
     const localParams = { method: method };
     localParams.headers = { ...this._headers };
     if (body) {
