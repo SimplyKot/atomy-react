@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useFormValidation from "../hooks/UseForm";
-function Application() {
+function Application(props) {
   const [inputDisabled, setInputDisabled] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
@@ -16,6 +16,9 @@ function Application() {
     e.preventDefault();
     console.log("Submit", values, isValid, errors);
     //Тут буде обращение к  API для отпавки письма
+    props.applicationSubmit(values);
+
+    resetForm();
   }
 
   useEffect(() => {
@@ -34,7 +37,7 @@ function Application() {
     } else {
       setButtonDisabled(true);
     }
-  }, [values]);
+  }, [values, isValid]);
 
   return (
     <section className="application" id="application">
@@ -58,7 +61,7 @@ function Application() {
         <span className="form__error" id="fio-input-error">
           {errors.fio}
         </span>
-        <label for="date" className="form__input-title">
+        <label htmlFor="date" className="form__input-title">
           Дата рождения:
         </label>
         <input
@@ -109,23 +112,23 @@ function Application() {
           {errors.email}
         </span>
 
-        <label for="country" class="form__input-title">
-          <span class="form__input-required">*</span>Ваша страна:
+        <label htmlFor="country" className="form__input-title">
+          <span className="form__input-required">*</span>Ваша страна:
         </label>
         <input
           id="country"
           name="country"
           placeholder="Введите вашу страну"
           type="text"
-          class="form__input"
+          className="form__input"
           onChange={handleChange}
           required
           disabled={inputDisabled}
         />
-        <span class="form__error" id="country-input-error">
+        <span className="form__error" id="country-input-error">
           {errors.country}
         </span>
-        <label for="index" class="form__input-title">
+        <label htmlFor="index" className="form__input-title">
           Ваш индекс:
         </label>
         <input
@@ -133,23 +136,23 @@ function Application() {
           name="index"
           placeholder="Введите ваш индекс"
           type="text"
-          class="form__input"
+          className="form__input"
           onChange={handleChange}
           disabled={inputDisabled}
         />
-        <span class="form__error" id="index-input-error">
+        <span className="form__error" id="index-input-error">
           {errors.index}
         </span>
 
-        <label for="address" class="form__input-title">
-          <span class="form__input-required">*</span>Ваш почтовый адрес:
+        <label htmlFor="address" className="form__input-title">
+          <span className="form__input-required">*</span>Ваш почтовый адрес:
         </label>
         <input
           id="address"
           name="address"
           placeholder="Введите ваш почтовый адрес"
           type="text"
-          class="form__input"
+          className="form__input"
           onChange={handleChange}
           required
           disabled={inputDisabled}
@@ -219,8 +222,8 @@ function Application() {
             бы зарегистрироваться
           </span>
         </label>
-        <p class="form__input-required-text">
-          <span class="form__input-required">*</span>Поля, обязательные для
+        <p className="form__input-required-text">
+          <span className="form__input-required">*</span>Поля, обязательные для
           заполнения
         </p>
         <button

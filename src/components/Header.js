@@ -75,9 +75,9 @@ function Header() {
         className={`header__background header__background_image-two
       ${!showBackground ? " header__background_main" : ""}`}
       ></div>
-      <div class="header__overlay">
-        <h1 class="header__title">Атоми</h1>
-        <p class="header__subtitle">Корейская косметическая компания</p>
+      <div className="header__overlay">
+        <h1 className="header__title">Атоми</h1>
+        <p className="header__subtitle">Корейская косметическая компания</p>
       </div>
     </header>
   );

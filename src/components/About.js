@@ -24,9 +24,10 @@ function About() {
           </p>
         </div>
         <iframe
+          title="О компании Atomy"
           className="about__video"
           src="https://www.youtube.com/embed/hU6KrJjhjpU"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
       <div className="about__besides-container">

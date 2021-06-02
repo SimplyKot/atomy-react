@@ -10,7 +10,7 @@ import other from "../image/pro-prochee.jpg";
 
 function Products() {
   return (
-    <section className="products">
+    <section className="products" id="products">
       <h2 className="products__title">ПРОДУКЦИЯ АТОМИ</h2>
       <p className="products__subtitle">
         Перспективы развития у компании Atomy на российском и других рынках

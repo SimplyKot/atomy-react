@@ -1,11 +1,27 @@
-function Popup() {
+import useFormValidation from "../hooks/UseForm";
+
+function Popup(props) {
+  function closePopup(e) {
+    e.preventDefault();
+    console.log("close popup");
+    props.togglePopup();
+  }
+
+  function submitPopup(e) {
+    e.preventDefault();
+    console.log("submit popup");
+    props.popupSubmit();
+    props.togglePopup();
+  }
+
   return (
-    <div className="popup">
+    <div className={`popup${props.isOpen ? " popup_opened" : ""}`}>
       <div className="popup__container">
         <button
           type="button"
           aria-label="Выход"
           className="popup__exit"
+          onClick={closePopup}
         ></button>
         <form className="popup__form" novalidate>
           <h2 className="popup__title">ФОРМА ОБРАТНОЙ СВЯЗИ</h2>
@@ -95,7 +111,7 @@ function Popup() {
               хотел(а) бы зарегистрироваться
             </span>
           </label>
-          <button className="popup__submit" type="submit">
+          <button className="popup__submit" type="submit" onClick={submitPopup}>
             Отправить
           </button>
         </form>

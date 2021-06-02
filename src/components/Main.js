@@ -5,14 +5,14 @@ import Catalog from "./Catalog";
 import Business from "./Business";
 
 import Application from "./Application";
-function Main() {
+function Main(props) {
   return (
     <main className="content">
       <About />
       <Products />
-      <Catalog />
+      <Catalog togglePopup={props.togglePopup} />
       <Business />
-      <Application />
+      <Application applicationSubmit={props.applicationSubmit} />
     </main>
   );
 }

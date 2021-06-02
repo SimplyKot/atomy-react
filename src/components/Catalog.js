@@ -1,4 +1,4 @@
-function Catalog() {
+function Catalog(props) {
   return (
     <section className="catalog" id="catalog">
       <h2 className="catalog__title">ДЛЯ ЗАРЕГИСТРИРОВАННЫХ</h2>
@@ -39,7 +39,9 @@ function Catalog() {
           <p className="catalog__text">Возможность получать доход</p>
         </li>
       </ul>
-      <button className="catalog__button">СКАЧАТЬ КАТАЛОГ</button>
+      <button className="catalog__button" onClick={props.togglePopup}>
+        СКАЧАТЬ КАТАЛОГ
+      </button>
     </section>
   );
 }

@@ -80,6 +80,7 @@
 @import url(./blocks/form/__visible-checkbox/form__visible-checkbox.css);
 @import url(./blocks/form/__checkbox-text/form__checkbox-text.css);
 @import url(./blocks/form/__submit/form__submit.css);
+@import url(./blocks/form/__error/form__error.css);
 
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__social-container/footer__social-container.css);
