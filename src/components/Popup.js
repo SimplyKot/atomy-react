@@ -20,17 +20,6 @@ function Popup() {
             className="popup__input"
           />
           <span className="popup__error" id="popup-fio-input-error"></span>
-          <label for="popup-date" className="popup__input-title">
-            Дата рождения:
-          </label>
-          <input
-            id="popup-date"
-            name="popup-date"
-            placeholder="Дата рождения"
-            type="date"
-            className="popup__input"
-          />
-          <span className="popup__error" id="popup-date-input-error"></span>
           <label for="popup-tel" className="popup__input-title">
             Сотовый телефон:
           </label>
@@ -53,17 +42,6 @@ function Popup() {
             className="popup__input"
           />
           <span className="popup__error" id="popup-email-input-error"></span>
-          <label for="popup-address" className="popup__input-title">
-            Ваш город:
-          </label>
-          <input
-            id="popup-address"
-            name="popup-address"
-            placeholder="Введите ваш город"
-            type="text"
-            className="popup__input"
-          />
-          <span className="popup__error" id="popup-address-input-error"></span>
           <p className="popup__input-title">Укажите что вас заинтересовало?</p>
           <div className="popup__checkbox-interest-container">
             <label for="popup-products-interest">

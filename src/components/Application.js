@@ -109,18 +109,52 @@ function Application() {
           {errors.email}
         </span>
 
-        <label for="address" className="form__input-title">
-          Ваш город:
+        <label for="country" class="form__input-title">
+          <span class="form__input-required">*</span>Ваша страна:
+        </label>
+        <input
+          id="country"
+          name="country"
+          placeholder="Введите вашу страну"
+          type="text"
+          class="form__input"
+          onChange={handleChange}
+          required
+          disabled={inputDisabled}
+        />
+        <span class="form__error" id="country-input-error">
+          {errors.country}
+        </span>
+        <label for="index" class="form__input-title">
+          Ваш индекс:
+        </label>
+        <input
+          id="index"
+          name="index"
+          placeholder="Введите ваш индекс"
+          type="text"
+          class="form__input"
+          onChange={handleChange}
+          disabled={inputDisabled}
+        />
+        <span class="form__error" id="index-input-error">
+          {errors.index}
+        </span>
+
+        <label for="address" class="form__input-title">
+          <span class="form__input-required">*</span>Ваш почтовый адрес:
         </label>
         <input
           id="address"
           name="address"
-          placeholder="Введите ваш город"
+          placeholder="Введите ваш почтовый адрес"
           type="text"
-          className="form__input"
+          class="form__input"
           onChange={handleChange}
+          required
           disabled={inputDisabled}
         />
+
         <span className="form__error" id="address-input-error">
           {errors.address}
         </span>
@@ -181,10 +215,14 @@ function Application() {
           />
           <span className="form__visible-checkbox"></span>
           <span className="form__checkbox-text">
-            Я подтверждаю , что у меня нет спонсора в Атоми у которого я
-            хотел(а) бы зарегистрироваться
+            Я подтверждаю, что у меня нет спонсора в Атоми у которого я хотел(а)
+            бы зарегистрироваться
           </span>
         </label>
+        <p class="form__input-required-text">
+          <span class="form__input-required">*</span>Поля, обязательные для
+          заполнения
+        </p>
         <button
           className={`form__submit
           ${inputDisabled || buttonDisabled ? " form__submit_disabled" : ""}`}
